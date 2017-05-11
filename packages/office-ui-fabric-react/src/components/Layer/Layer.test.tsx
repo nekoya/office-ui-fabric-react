@@ -2,6 +2,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 /* tslint:enable:no-unused-variable */
+import { PropTypes } from 'prop-types';
 
 import { Layer } from './Layer';
 import { LayerHost } from './LayerHost';
@@ -14,7 +15,7 @@ describe('Layer', () => {
 
     class Child extends React.Component<{}, {}> {
       public static contextTypes = {
-        foo: React.PropTypes.string.isRequired
+        foo: PropTypes.string.isRequired
       };
 
       public context: any;
@@ -28,7 +29,7 @@ describe('Layer', () => {
 
     class Parent extends React.Component<{}, {}> {
       public static childContextTypes = {
-        foo: React.PropTypes.string
+        foo: PropTypes.string
       };
 
       public getChildContext() {
